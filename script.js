@@ -1,78 +1,78 @@
-var migrating = true;
+// var migrating = true;
 
-var fly = function(num) { 
-    var sound = "Flying!";
-    function wingFlapper() {
-        console.log(sound);
-}
-    for (var i = 0; i < num; i++) {
-        wingFlapper();
-}
-};
+// var fly = function(num) { 
+//     var sound = "Flying!";
+//     function wingFlapper() {
+//         console.log(sound);
+// }
+//     for (var i = 0; i < num; i++) {
+//         wingFlapper();
+// }
+// };
 
-function quack(num) {
-var sound = "Quack";
-var quacker = function() {
-    console.log(sound);
-};
-    for (i = 0; i < num; i++) {
-        quacker();
-    }
-}
+// function quack(num) {
+// var sound = "Quack";
+// var quacker = function() {
+//     console.log(sound);
+// };
+//     for (i = 0; i < num; i++) {
+//         quacker();
+//     }
+// }
 
-if (migrating) {
-    quack(4);
-    fly(4);
-}
+// if (migrating) {
+//     quack(4);
+//     fly(4);
+// }
 
-var justAvar = "Oh, don't you worry about it, I'm GLOBAL";
+// var justAvar = "Oh, don't you worry about it, I'm GLOBAL";
 
-function whereAreYou() {
-    var justAvar = "Just an every day LOCAL";
+// function whereAreYou() {
+//     var justAvar = "Just an every day LOCAL";
     
-    function inner() {
-        return justAvar;
-    }
+//     function inner() {
+//         return justAvar;
+//     }
 
-    return inner;
-}
+//     return inner;
+// }
 
-var innerT = "TEST"
-function innerFunction() {
-    var innerT = "Just an every day UPDATE";
+// var innerT = "TEST"
+// function innerFunction() {
+//     var innerT = "Just an every day UPDATE";
     
-    function inner() {
-        return innerT;
-    }
+//     function inner() {
+//         return innerT;
+//     }
 
-    return inner;
-}
+//     return inner;
+// }
 
-var result = whereAreYou();
-var result = innerFunction();
-console.log(result);
+// var result = whereAreYou();
+// var result = innerFunction();
+// console.log(result);
 
-var count = 0;
+// var count = 0;
 
-function counter() {
-    count = count + 1;
-    return count;
-}
+// function counter() {
+//     count = count + 1;
+//     return count;
+// }
 
 
-function makeCounter() {
-    var count = 0;
+// function makeCounter() {
+//     var count = 0;
 
-    function counter() {
-        count = count + 1;
-        return count;
-    }
-    return counter;
-}
-var doCount = makeCounter();
-console.log(doCount())
-console.log(doCount())
-console.log(doCount())
+//     function counter() {
+//         count = count + 1;
+//         return count;
+//     }
+//     return counter;
+// }
+// var doCount = makeCounter();
+// console.log(doCount())
+// console.log(doCount())
+// console.log(doCount())
 
 
 
@@ -83,3 +83,19 @@ function setTimer (doneMessage, n) {
     doneMessage = "OUCH!";
 }
 setTimer("Cookies are done!", 1000);
+
+
+
+
+window.onload = function() {
+    
+    var count = 0;
+    var message = "Вы нажали на меня!";
+    var div = document.getElementById("message");
+
+    var button = document.getElementById("clickme");
+    button.onclick = function() {
+    count++;
+    div.innerHTML = message + count + " Раз!";
+    };
+};
