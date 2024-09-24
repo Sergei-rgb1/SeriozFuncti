@@ -51,3 +51,35 @@ function innerFunction() {
 var result = whereAreYou();
 var result = innerFunction();
 console.log(result);
+
+var count = 0;
+
+function counter() {
+    count = count + 1;
+    return count;
+}
+
+
+function makeCounter() {
+    var count = 0;
+
+    function counter() {
+        count = count + 1;
+        return count;
+    }
+    return counter;
+}
+var doCount = makeCounter();
+console.log(doCount())
+console.log(doCount())
+console.log(doCount())
+
+
+
+function setTimer (doneMessage, n) {
+    setTimeout(function() {
+        alert(doneMessage);
+    }, n);
+    doneMessage = "OUCH!";
+}
+setTimer("Cookies are done!", 1000);
